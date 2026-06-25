@@ -1,12 +1,24 @@
 {
-  "name": "backend",
+  "name": "fifabot-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
+  "main": "src/index.js",
   "scripts": {
+    "test:connection": "node src/test/connectionTest.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "rag",
+    "gemini",
+    "pinecone",
+    "fifa"
+  ],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "FIFA WC 2026 Multimodal RAG Backend",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@pinecone-database/pinecone": "^8.0.0",
+    "dotenv": "^17.4.2"
+  }
 }
