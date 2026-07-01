@@ -1,0 +1,118 @@
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+/* User: right-aligned */
+.message--user {
+  align-items: flex-end;
+}
+
+/* Assistant: left-aligned */
+.message--assistant {
+  align-items: flex-start;
+}
+
+/* Role label */
+.message__role {
+  color: var(--text-secondary);
+}
+
+/* Content bubble */
+.message__content {
+  color: var(--text-primary);
+  line-height: 1.6;
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.message__content strong {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.message__content em {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.message__content code {
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.88em;
+  background: var(--surface-container-high, rgba(255, 255, 255, 0.08));
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 0.5px solid var(--border-hairline, rgba(255, 255, 255, 0.06));
+}
+
+.message__content--user {
+  background: var(--surface-container-low);
+  border: 0.5px solid var(--border-hairline);
+  padding: 16px;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  max-width: 85%;
+}
+
+/* Streaming cursor dots */
+.message__cursor {
+  display: inline-flex;
+  gap: 4px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.message__cursor .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text-secondary);
+  animation: dotPulse 1.4s ease-in-out infinite;
+}
+
+.message__cursor .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.message__cursor .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Source citation chips */
+.message__sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.source-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 0.5px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.source-chip:hover {
+  background: var(--surface-container-high);
+  border-color: var(--border-muted);
+  color: var(--text-primary);
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.02);
+}
+
+.source-chip__icon {
+  font-size: 14px;
+}

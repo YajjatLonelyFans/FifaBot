@@ -2,6 +2,10 @@ import { getIndex } from "../config/pinecone.js";
 
 
 export async function upsertVectors(vectors) {
+  if (!vectors || vectors.length === 0) {
+    console.warn("[Pinecone] upsertVectors called with 0 vectors, skipping.");
+    return;
+  }
   const index = getIndex();
   
   // Pinecone recommends upserting in batches of ~100

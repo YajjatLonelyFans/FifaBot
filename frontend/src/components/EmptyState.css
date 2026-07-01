@@ -1,0 +1,92 @@
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  max-width: var(--container-max);
+  width: 100%;
+  padding: 0 16px;
+}
+
+/* Glowing logo ring */
+.empty-state__logo-ring {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-muted);
+  box-shadow: 0 0 15px rgba(230, 29, 37, 0.1);
+}
+
+.empty-state__logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+/* Text */
+.empty-state__text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.empty-state__title {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.empty-state__subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+  max-width: 420px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Suggestion Chips */
+.empty-state__chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding-top: 16px;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  border: 0.5px solid var(--border-hairline);
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chip:hover {
+  border-color: var(--border-muted);
+  color: var(--text-primary);
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(230, 29, 37, 0.15);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.chip__icon {
+  font-size: 14px;
+}

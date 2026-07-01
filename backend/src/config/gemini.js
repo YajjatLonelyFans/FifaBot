@@ -60,6 +60,7 @@ async function streamChat(systemPrompt, userMessage) {
   const model = genAI.getGenerativeModel({
     model: "gemini-2.5-flash",
     systemInstruction: systemPrompt,
+    tools: [{ googleSearch: {} }],
   });
 
   const result = await model.generateContentStream(userMessage);

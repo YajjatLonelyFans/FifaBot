@@ -1,0 +1,23 @@
+.chat-area {
+  flex: 1;
+  overflow-y: auto;
+  width: 100%;
+  position: relative;
+}
+
+.chat-area__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  width: 100%;
+  padding: 32px 16px 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .chat-area__inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

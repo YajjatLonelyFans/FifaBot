@@ -1,0 +1,256 @@
+/* ============================================
+   FIFA BOT — Design System & Global Styles
+   ============================================ */
+
+/* --- CSS Custom Properties (Design Tokens) --- */
+:root {
+  /* Surface & Background */
+  --surface: #0F0F0F;
+  --surface-dim: #131313;
+  --surface-bright: #3a3939;
+  --surface-container-lowest: #0e0e0e;
+  --surface-container-low: #1c1b1b;
+  --surface-container: #201f1f;
+  --surface-container-high: #2a2a2a;
+  --surface-container-highest: #353534;
+  --surface-variant: #353534;
+  --background: #131313;
+  --canvas: #080808;
+
+  /* Primary */
+  --primary: #ffb4ac;
+  --primary-container: #e61d25;
+  --primary-fixed: #ffdad6;
+  --primary-fixed-dim: #ffb4ac;
+  --on-primary: #690007;
+  --on-primary-container: #fffdff;
+  --on-primary-fixed: #410003;
+  --on-primary-fixed-variant: #93000e;
+  --inverse-primary: #c00016;
+
+  /* Secondary */
+  --secondary: #bbc3ff;
+  --secondary-container: #303f93;
+  --secondary-fixed: #dee0ff;
+  --secondary-fixed-dim: #bbc3ff;
+  --on-secondary: #16267b;
+  --on-secondary-container: #a4b0ff;
+  --on-secondary-fixed: #000f5c;
+  --on-secondary-fixed-variant: #303f93;
+
+  /* Tertiary */
+  --tertiary: #8ccdff;
+  --tertiary-container: #007cb4;
+  --tertiary-fixed: #cae6ff;
+  --tertiary-fixed-dim: #8ccdff;
+  --on-tertiary: #00344e;
+  --on-tertiary-container: #fdfdff;
+  --on-tertiary-fixed: #001e2f;
+  --on-tertiary-fixed-variant: #004b6f;
+
+  /* Error */
+  --error: #ffb4ab;
+  --error-container: #93000a;
+  --on-error: #690005;
+  --on-error-container: #ffdad6;
+
+  /* Text */
+  --text-primary: #E8E8E8;
+  --text-secondary: #6B6B6B;
+  --text-ghost: #2E2E2E;
+  --on-surface: #e5e2e1;
+  --on-surface-variant: #e7bdb8;
+  --on-background: #e5e2e1;
+  --inverse-surface: #e5e2e1;
+  --inverse-on-surface: #313030;
+
+  /* Borders */
+  --border-hairline: #1C1C1C;
+  --border-muted: #3A3A3A;
+  --outline: #ae8883;
+  --outline-variant: #5d3f3c;
+
+  /* Misc */
+  --success: #3CAC3B;
+  --surface-tint: #ffb4ac;
+
+  /* Typography */
+  --font-body: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-code: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --edge-margin: 24px;
+  --row-padding: 16px;
+  --element-gap: 12px;
+  --container-max: 720px;
+
+  /* Radius */
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 12px;
+  --radius-pill: 100px;
+}
+
+/* --- Global Reset --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  background-color: var(--canvas);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-hairline);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-muted);
+}
+
+/* --- Typography Utilities --- */
+.text-wordmark {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+}
+
+.text-role-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  line-height: 12px;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.text-body-md {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.text-label-sm {
+  font-family: var(--font-body);
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 500;
+}
+
+.text-code {
+  font-family: var(--font-code);
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+/* --- Keyframe Animations --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes barPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dotPulse {
+  0%, 80%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --- Animation Utilities --- */
+.animate-fade-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+
+/* --- Material Symbols --- */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
